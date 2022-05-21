@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba3f2151c3d448a497fea8c049fdfab1, type: 3}
+  m_Name: ColorfulWaves
+  m_EditorClassIdentifier: 
+  bufferA:
+    bufferName: 0
+    inputBufferNames: 
+    material: {fileID: 0}
+    format: 2
+    arguments: []
+  bufferB:
+    bufferName: 0
+    inputBufferNames: 
+    material: {fileID: 0}
+    format: 2
+    arguments: []
+  bufferC:
+    bufferName: 0
+    inputBufferNames: 
+    material: {fileID: 0}
+    format: 2
+    arguments: []
+  bufferD:
+    bufferName: 0
+    inputBufferNames: 
+    material: {fileID: 0}
+    format: 2
+    arguments: []
+  image:
+    bufferName: 1
+    inputBufferNames: 
+    material: {fileID: 2100000, guid: 0b31e826e456447438af1f80baa37865, type: 2}
+    format: 4
+    arguments:
+    - name: iWaves
+      desc: Wave Count
+      defaultValue: 6
+      valueType: 'int '
+      valueMin: 4
+      valueMax: 20
+  mainMaterial: {fileID: 2100000, guid: 0b31e826e456447438af1f80baa37865, type: 2}
+  FrameCount: 4860
