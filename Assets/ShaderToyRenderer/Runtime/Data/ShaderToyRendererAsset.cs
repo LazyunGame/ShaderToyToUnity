@@ -16,31 +16,31 @@ namespace ShaderToyRenderer.Data
 
         private bool _isInit;
 
-        public void Init(Camera camera)
+        public void Init()
         {
             if (bufferA.bufferName != ChannelEnum.none)
             {
-                bufferA.Connect(new ChannelBuffer[] {bufferA, bufferB, bufferC, bufferD, image},camera);
+                bufferA.Connect(new ChannelBuffer[] {bufferA, bufferB, bufferC, bufferD, image});
             }
 
             if (bufferB.bufferName != ChannelEnum.none)
             {
-                bufferB.Connect(new ChannelBuffer[] {bufferA, bufferB, bufferC, bufferD, image},camera);
+                bufferB.Connect(new ChannelBuffer[] {bufferA, bufferB, bufferC, bufferD, image});
             }
 
             if (bufferC.bufferName != ChannelEnum.none)
             {
-                bufferC.Connect(new ChannelBuffer[] {bufferA, bufferB, bufferC, bufferD, image},camera);
+                bufferC.Connect(new ChannelBuffer[] {bufferA, bufferB, bufferC, bufferD, image});
             }
 
             if (bufferD.bufferName != ChannelEnum.none)
             {
-                bufferD.Connect(new ChannelBuffer[] {bufferA, bufferB, bufferC, bufferD, image},camera);
+                bufferD.Connect(new ChannelBuffer[] {bufferA, bufferB, bufferC, bufferD, image});
             }
 
 
             if (image.bufferName != ChannelEnum.none)
-                image.Connect(new ChannelBuffer[] {bufferA, bufferB, bufferC, bufferD, image},camera);
+                image.Connect(new ChannelBuffer[] {bufferA, bufferB, bufferC, bufferD, image});
 
             if (image.bufferName != ChannelEnum.none && !mainMaterial)
             {
@@ -56,11 +56,11 @@ namespace ShaderToyRenderer.Data
 
         [HideInInspector] public int FrameCount;
 
-        public void Render(Camera camera)
+        public void Render()
         {
             if (!_isInit)
             {
-                Init(camera);
+                Init();
             }
 
             SetInt(ShaderToy.iFrame, FrameCount);

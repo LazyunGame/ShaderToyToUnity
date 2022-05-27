@@ -61,7 +61,7 @@ namespace ShaderToyRenderer
 
         private CommandBuffer _commandBuffer;
 
-        public void Connect(ChannelBuffer[] buffers,Camera camera)
+        public void Connect(ChannelBuffer[] buffers)
         {
             if (bufferName == ChannelEnum.none)
             {
@@ -114,8 +114,7 @@ namespace ShaderToyRenderer
             isConnected = true;
             _commandBuffer = new CommandBuffer();
             _commandBuffer.name = bufferName.ToString();
-            camera.AddCommandBuffer(CameraEvent.AfterSkybox, _commandBuffer);
-
+            // camera.AddCommandBuffer(CameraEvent.AfterSkybox, _commandBuffer);
         }
 
         public void Render()
@@ -133,7 +132,7 @@ namespace ShaderToyRenderer
             // Debug.LogError(material.GetTexture("iChannel0").name);
             _commandBuffer.Clear();
             _commandBuffer.SetRenderTarget(RenderTexture);
-            _commandBuffer.Blit(Texture2D.blackTexture, RenderTexture, material,0);
+            _commandBuffer.Blit(Texture2D.blackTexture, RenderTexture, material, 0);
             if (_rt1)
             {
                 // 如果有双Buffer swap，在这里渲染更新替换
@@ -141,7 +140,8 @@ namespace ShaderToyRenderer
                 _commandBuffer.SetRenderTarget(_rt1);
                 _commandBuffer.Blit(RenderTexture, _rt1);
             }
-            
+
+            Graphics.ExecuteCommandBuffer(_commandBuffer);
         }
 
         public void SetMousePosition(Vector4 mousePos)

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using ShaderToyRenderer.Data;
 using UnityEngine;
@@ -13,23 +15,11 @@ namespace ShaderToyRenderer
         public MeshRenderer renderTarget;
         public RawImage uiRenderTarget;
         public ShaderToyRendererInput input;
-        public Camera myCamera;
-        public string CameraName;
 
         private Vector4 mousePosition;
-        public Transform xMax, xMin, zMax, zMin;
 
 
-        public Rect Area
-        {
-            get
-            {
-                return new Rect(xMax.position.x, zMax.position.z, Vector3.Distance(xMax.position, xMin.position),
-                    Vector3.Distance(zMax.position, zMin.position));
-            }
-        }
-
-        private void Start()
+        private IEnumerator Start()
         {
             if (data)
             {
@@ -37,6 +27,7 @@ namespace ShaderToyRenderer
                 // data.Init();
             }
 
+            yield return null;
             if (data)
             {
                 if (renderTarget != null)
@@ -50,7 +41,7 @@ namespace ShaderToyRenderer
                 }
 
                 // Shader.SetGlobalTexture("_RippleMap", data.bufferA.RenderTexture);
-                GetComponent<MeshRenderer>().material.SetTexture("_RippleMap", data.bufferA.RenderTexture);
+                // GetComponent<MeshRenderer>().material.SetTexture("_RippleMap", data.bufferA.RenderTexture);
             }
 
             if (input)
@@ -83,12 +74,7 @@ namespace ShaderToyRenderer
         {
             if (data != null)
             {
-                if (!myCamera)
-                {
-                    myCamera = FindObjectsOfType<Camera>().FirstOrDefault(t => t.name == CameraName);
-                }
-
-                data.Render(myCamera);
+                data.Render();
             }
         }
 
