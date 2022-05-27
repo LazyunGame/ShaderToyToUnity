@@ -34,7 +34,11 @@ vec4 textureLod(sampler2D samp,vec2 p, float lod)
     return tex2Dlod(samp, float4(p, 0, lod));
 }
 
+
 #define texture tex2D
+
+// #define textureLod(samplerName,coord,lod) sampler_##samplerName.SampleLevel(samplerName, coord, lod)
+// #define texture(samplerName,coord) sampler_##samplerName.Sample(samplerName, coord)
 /*****************************************/
 
 // float4 textureLod(sampler2D sp,float2 uv,float level)
@@ -125,3 +129,53 @@ float4 hsv2rgb(float3 c, float a)
 {
     return float4(hsv2rgb(c), a);
 }
+
+
+/******** input **********/
+struct appdata
+{
+    float4 vertex : POSITION;
+    float2 uv : TEXCOORD0;
+};
+
+struct v2f
+{
+    float2 uv : TEXCOORD0;
+    float4 vertex : SV_POSITION;
+};
+
+v2f vert(appdata v)
+{
+    v2f o;
+    o.vertex = TransformObjectToHClip(v.vertex);
+    o.uv = v.uv;
+    return o;
+}
+
+
+CBUFFER_START(UnityPerMaterial)
+    float4 iChannel0_ST;
+    float4 iChannel1_ST;
+    float4 iChannel2_ST;
+    float4 iChannel3_ST;
+CBUFFER_END
+
+sampler2D iChannel0;
+sampler2D iChannel1;
+sampler2D iChannel2;
+sampler2D iChannel3;
+
+float4 iMouse;
+float iFrame;
+//
+// TEXTURE2D(iChannel0);
+// SAMPLER(sampler_iChannel0);
+//
+// TEXTURE2D(iChannel1);
+// SAMPLER(sampler_iChannel1);
+//
+// TEXTURE2D(iChannel2);
+// SAMPLER(sampler_iChannel2);
+//
+// TEXTURE2D(iChannel3);
+// SAMPLER(sampler_iChannel3);

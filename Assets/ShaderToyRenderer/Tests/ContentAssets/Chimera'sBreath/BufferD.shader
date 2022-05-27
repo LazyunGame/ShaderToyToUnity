@@ -23,31 +23,6 @@ Shader "ShaderToy/Chimera's Breath/BufferD"
             #include "../../../Runtime/Shaders/ShaderToyBase.hlsl"
             #include "./Common.hlsl"
 
-            struct appdata
-            {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
-            };
-
-            struct v2f
-            {
-                float2 uv : TEXCOORD0;
-                float4 vertex : SV_POSITION;
-            };
-
-            sampler2D iChannel0;
-            sampler2D iChannel1;
-            float iFrame;
-            vec4 iMouse;
-
-            v2f vert(appdata v)
-            {
-                v2f o;
-                o.vertex = TransformObjectToHClip(v.vertex);
-                o.uv = v.uv;
-                return o;
-            }
-
             mat2 mm2(in float a)
             {
                 float c = cos(a), s = sin(a);
