@@ -16,6 +16,7 @@
 
 #define mix lerp
 #define vec2 float2
+#define ivec2 int2
 #define vec3 float3
 #define vec4 float4
 #define fract frac
@@ -26,7 +27,7 @@
 #define dFdy ddy
 vec4 texelFetch(sampler2D samp,vec2 p, int lod)
 {
-    return tex2Dlod(samp, float4(p, 0, lod));
+    return tex2Dlod(samp, float4(p/iResolution.xy, 0, lod));
 }
 
 vec4 textureLod(sampler2D samp,vec2 p, float lod)

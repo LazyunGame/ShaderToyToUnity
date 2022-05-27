@@ -80,7 +80,7 @@ namespace ShaderToyRenderer
                 channels[i] = buffers.First(t =>
                 {
 #if UNITY_EDITOR
-                    Debug.Log(t.bufferName + " --> " + name);
+                    // Debug.Log(t.bufferName + " --> " + name);
 #endif
                     return t.bufferName == name;
                 });

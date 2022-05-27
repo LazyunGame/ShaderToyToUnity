@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba3f2151c3d448a497fea8c049fdfab1, type: 3}
+  m_Name: DryIce2
+  m_EditorClassIdentifier: 
+  bufferA:
+    bufferName: 2
+    inputBufferNames: 0500000002000000
+    material: {fileID: 2100000, guid: 6fa3dea95c7f24051b22c481718f0d23, type: 2}
+    size: 0
+    format: 2
+    filterType: 1
+    wrapMode: 1
+    arguments: []
+  bufferB:
+    bufferName: 3
+    inputBufferNames: 02000000
+    material: {fileID: 2100000, guid: 3683f0cafc4db4a27871deb341350c86, type: 2}
+    size: 0
+    format: 2
+    filterType: 1
+    wrapMode: 1
+    arguments: []
+  bufferC:
+    bufferName: 4
+    inputBufferNames: 0300000005000000
+    material: {fileID: 2100000, guid: 9a33810ddc3a14ed396acb50780d71e4, type: 2}
+    size: 0
+    format: 2
+    filterType: 1
+    wrapMode: 1
+    arguments: []
+  bufferD:
+    bufferName: 5
+    inputBufferNames: 04000000
+    material: {fileID: 2100000, guid: 7f03ed9d9a2a441c3b5100bce4716016, type: 2}
+    size: 0
+    format: 2
+    filterType: 1
+    wrapMode: 1
+    arguments: []
+  image:
+    bufferName: 1
+    inputBufferNames: 02000000
+    material: {fileID: 2100000, guid: 6f67289a5c3904494ba6ec28d147694f, type: 2}
+    size: 0
+    format: 2
+    filterType: 1
+    wrapMode: 1
+    arguments: []
+  mainMaterial: {fileID: 2100000, guid: a3d7193549d7140f9a02d542a90e3501, type: 2}
+  FrameCount: 0
