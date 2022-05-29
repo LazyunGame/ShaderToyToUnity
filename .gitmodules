@@ -1,0 +1,3 @@
+[submodule "Assets/ShaderToyRenderFeature"]
+	path = Assets/ShaderToyRenderFeature
+	url = git@lazyun:LazyunGame/ShaderToyRenderFeature.git

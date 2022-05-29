@@ -998,7 +998,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2036538348
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1064,7 +1064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03b5739f04bd46e383107028c77b958b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: b3c942110f5ff4febb942d19a7871591, type: 2}
+  data: {fileID: 11400000, guid: dfa433f1d0c3a46c7af27924f216e206, type: 2}
   renderTarget: {fileID: 0}
   uiRenderTarget: {fileID: 2036538349}
   input: {fileID: 612303074}
